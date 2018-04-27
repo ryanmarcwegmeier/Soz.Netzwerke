@@ -13,23 +13,24 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 
-	<title>Add TODO</title>
+	<script src="progress.js"></script>
+	<title>Edit TODO</title>
 </head>
 <body>
 	<header>
 		<nav class="navbar navbar-expand-md navbar-dark bg-dark">
 			
 			<a class="navbar-brand" href="index.html">TODO-Tracker</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 
-			<div class="collapse navbar-collapse" id="navbarToggler">
+			<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item">
 						<a class="nav-link" href="index.html">Home</a>
 					</li>
-					<li class="nav-item active">
+					<li class="nav-item">
 						<a class="nav-link" href="createTODO.html">Hinzufügen</a>
 					</li>
 					<li class="nav-item">
@@ -44,7 +45,7 @@
 	</header>
 
 	<main class="container-fluid">
-		<h1>TODO hinzufügen</h1><br>
+		<h1>TODO bearbeiten</h1><br>
 		<form class="form-group">
 			<div class="form-group">
       			<label for="aufgabe">Aufgabe:</label>
@@ -59,7 +60,7 @@
 
     			<div class="row">
     				<div class="col-2-md ml-3">
-    					<input type="number" class="form-control" id="fortschritt" name="fortschritt_input" value="0" min="0" max="100" required onchange="setProgress(this.value,'#input_progress')">
+    					<input type="number" class="form-control" id="fortschritt" name="fortschritt_input" value="0" min="0" max="100" required onkeyup="setProgress(this.value,'#input_progress')" onchange="setProgress(this.value,'#input_progress')">
     				</div>
     				<div class="col">
     					<div class="progress">
@@ -76,20 +77,11 @@
 
 
 		</form>
-		<script type="text/javascript">
-			function setProgress(value,id){
-				var x=value;
-				if(x>=0 && x<=100){
-					$(id).text(value.toString()+"%")
-					$(id).css("width",x.toString()+"%");
-				}else{
-					$(id).css("width","0%");
-				}
-			}
-		</script>
+
 		
 
 	</main>
+	<footer></footer>
 
 
 </body>
